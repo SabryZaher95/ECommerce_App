@@ -3,11 +3,15 @@
     <h2 class="text-center">Sign In</h2>
 
     <form class="form-group" [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
+      <p class="alert alert-danger" *ngIf="errorMsg">{{errorMsg}}</p>
       <label for="email">Email</label>
       <input type="email" class="form-control mb-2" id="email" formControlName="email">
       <label for="pass">Password</label>
       <input type="password" class="form-control mb-2" id="pass" formControlName="password">
-      <button class="btn bg-main text-white ms-auto d-block mt-3" type="submit">Login</button>
+      <button class="btn bg-main text-white ms-auto d-block mt-3" type="submit">
+        <i class="fa fa-spinner fa-spin me-2" *ngIf="isLoading"></i>
+        <span *ngIf="!isLoading">Login</span>
+      </button>
     </form>
   </div>
 </div>
