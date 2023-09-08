@@ -1,0 +1,13 @@
+<div class="row mt-5">
+  <div class="col">
+    <h2 class="text-center">Sign In</h2>
+
+    <form class="form-group" [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
+      <label for="email">Email</label>
+      <input type="email" class="form-control mb-2" id="email" formControlName="email">
+      <label for="pass">Password</label>
+      <input type="password" class="form-control mb-2" id="pass" formControlName="password">
+      <button class="btn bg-main text-white ms-auto d-block mt-3" type="submit">Login</button>
+    </form>
+  </div>
+</div>
