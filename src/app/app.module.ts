@@ -16,6 +16,8 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FeaturedProductsComponent } from './components/featured-products/featured-products.component';
+import { ProductItemComponent } from './components/product-item/product-item.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     NotFoundComponent,
     ProductsComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    FeaturedProductsComponent,
+    ProductItemComponent
   ],
   imports: [
     BrowserModule,

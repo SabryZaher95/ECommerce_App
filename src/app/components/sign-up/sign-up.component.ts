@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
@@ -8,13 +8,19 @@ import { AuthService } from 'src/app/core/services/auth.service';
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss']
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit{
 
   errorMsg: string = '';
   isLoading: boolean = false;
   isNotValidForm: boolean = false;
 
   constructor(private _authService:AuthService, private _Router:Router){}
+  ngOnInit(): void {
+    /*if(localStorage.getItem("UserToken")){
+      this._Router.navigate(['/home']);
+    }*/
+    this._authService.checkLogIn();
+  }
 
   registerForm: FormGroup = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
