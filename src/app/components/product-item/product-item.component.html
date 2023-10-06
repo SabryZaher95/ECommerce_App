@@ -1,13 +1,15 @@
-<div class="product rounded p-2 mb-3">
-  <img [src]="product.imageCover" alt="" class="w-100 mb-2">
-  <p class="text-main fw-bold">{{product.category.name}}</p>
-  <h2 class="h6">{{product.title.split(' ').splice(0, 4).join(' ')}}</h2>
-  <div class="d-flex justify-content-between">
-    <span>{{product.price}} EGP</span>
-    <div>
-      <i class="fa fa-star rating-color"></i>
-      <span>{{product.ratingsAverage}}</span>
+<div class="product rounded p-2 mb-3 cursor-pointer">
+  <a [routerLink]="['/productDetails', product.id]">
+    <img [src]="product.imageCover" alt="" class="w-100 mb-2">
+    <p class="text-main fw-bold">{{product.category.name}}</p>
+    <h2 class="h6">{{product.title.split(' ').splice(0, 4).join(' ')}}</h2>
+    <div class="d-flex justify-content-between">
+      <span>{{product.price}} EGP</span>
+      <div>
+        <i class="fa fa-star rating-color"></i>
+        <span>{{product.ratingsAverage}}</span>
+      </div>
     </div>
-  </div>
+  </a>
   <button class="btn bg-main text-white w-100 mx-auto">Add to Cart</button>
 </div>
