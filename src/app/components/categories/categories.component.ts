@@ -40,6 +40,6 @@ export class CategoriesComponent implements OnInit{
         items: 8
       },
     },
-    nav: false
+    nav: true
   }
 }

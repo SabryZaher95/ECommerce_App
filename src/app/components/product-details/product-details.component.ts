@@ -23,6 +23,10 @@ export class ProductDetailsComponent implements OnInit{
       },
       error: err => console.log(err)
     })*/
+    this.getProductId();
+  }
+
+  getProductId(){
     this.productId = this._activatedRoute.snapshot.paramMap.get("id")!;
     this.getProductDetails();
   }
